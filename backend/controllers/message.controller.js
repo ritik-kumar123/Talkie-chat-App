@@ -19,7 +19,7 @@ export const getMessages = async (req, res) => {
      const myId = req.user._id;
      const receiver = await User.findById(receiverId);
      if (!receiver) {
-       return res.status(500).json({
+       return res.status(400).json({
          message: "Receiver Id Invalid",
        });
      }
@@ -38,9 +38,10 @@ export const getMessages = async (req, res) => {
    }
 };
 export const sendMessage = async (req, res) => {
-    {
       try {
-          const { text } = req.body;
+        console.log(req.body);
+        
+          const { text } = req?.body;
           const media = req?.files?.media;
           const { id: receiverId } = req.params;
           const senderId = req.user._id;
@@ -93,4 +94,3 @@ export const sendMessage = async (req, res) => {
         return res.status(500).json({message:`sendMessage error ${error}`})
       }
     }
-};

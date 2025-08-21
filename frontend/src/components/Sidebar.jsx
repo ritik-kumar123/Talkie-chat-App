@@ -33,7 +33,7 @@ const Sidebar = () => {
                   Show Online Only
                 </label>
                 <span className="text-xs text-green-500">
-                  ({onlineUsers.length-1} online)
+                  ({onlineUsers.length-2} online)
                 </span>
               </div>
 

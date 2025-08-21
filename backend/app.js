@@ -18,14 +18,13 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-app.use('/api/v1/user',userRouter)
-app.use('/api/v1/message',messageRouter)
-
 app.use(
     fileUpload({
         useTempFiles:true,
         tempFileDir: "./temp/"
     })
 )
+app.use('/api/v1/user',userRouter)
+app.use('/api/v1/message',messageRouter)
 connectDB();
 export default app;

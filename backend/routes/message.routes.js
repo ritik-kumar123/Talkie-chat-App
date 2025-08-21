@@ -5,6 +5,6 @@ const messageRouter = express.Router();
 
 messageRouter.get("/users",isAuthenticated,getAllUsers)
 messageRouter.get("/:id",isAuthenticated,getMessages)
-messageRouter.put("/send/:id",isAuthenticated,sendMessage);
+messageRouter.post("/send/:id",isAuthenticated,sendMessage);
 
 export default messageRouter;
