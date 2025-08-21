@@ -47,7 +47,7 @@ const Sidebar = () => {
                   ${selectedUser?.id === user?._id?"bg-gray-200 ring-gray-200":"hover:bg-gray-200"}`}>
                     {/*AVATAR*/}
                     <div className="relative mx-auto lg:mx-0">
-                    <img src={user?.avtar?.url||"hii"}  alt="profile img" 
+                    <img src={user?.avtar?.url||"/profile.png"}  alt="profile img" 
                     className="w-12 h-12 object-cover rounded-full" />
                     {
                       onlineUsers.includes(user?._id) && (
